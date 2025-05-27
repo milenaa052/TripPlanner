@@ -1,0 +1,1052 @@
+:root {
+  --branco: #ffffff;
+  --preto: #000000;
+  --cinza-claro: #ededed;
+  --cinza-claro2: #d9d9d9;
+  --cinza-escuro: #b4b3b3;
+  --laranja: #f58e27;
+  --laranja-escuro: #aa5601;
+  --vermelho: #fc0000;
+  --verde: #3de626;
+}
+
+html {
+  background-color: var(--branco) !important;
+  color: var(--preto) !important;
+
+  body {
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0;
+
+      a {
+        color: var(--preto);
+        
+        .titulo {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          width: 50%;
+  
+          .logo {
+            margin: 0px 0px 20px 0px;
+            width: 30%;
+          }
+  
+          h1 {
+            margin: 0px;
+            font-size: 30px;
+          }
+        }
+      }
+
+      .icon {
+        font-size: 25px;
+        color: var(--laranja);
+
+        &:hover {
+          color: var(--laranja-escuro);
+          cursor: pointer;
+        }
+      }
+    }
+
+    #root {
+      padding: 2rem;
+      text-align: center;
+      height: 90vh;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+
+      .card, .cardUser {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+
+        .titulo {
+          text-align: center;
+          font-size: 40px;
+        }
+
+        .form {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          width: 50%;
+          margin: 20px;
+
+          .campos {
+            margin: 15px;
+            width: 60%;
+
+            .label {
+              display: block;
+              margin-bottom: 5px;
+              font-weight: bold;
+              text-align: left;
+            }
+
+            .input {
+              border: 2px solid var(--cinza-claro2);
+              border-radius: 7px;
+              height: 28px;
+              width: 96%;
+              padding: 6px;
+              outline: none;
+              background-color: var(--cinza-claro);
+              color: var(--preto);
+            }
+
+            .react-datepicker-wrapper {
+              display: block !important;
+            }
+
+            .select {
+              border: 2px solid var(--cinza-claro2);
+              background-color: var(--cinza-claro);
+              color: var(--preto);
+              border-radius: 7px;
+              height: 45px;
+              width: 100%;
+              padding: 6px;
+              outline: none;
+            }
+          }
+
+          .camposHora,
+          .camposSenha {
+            width: 60%;
+            display: flex;
+            justify-content: space-between;
+
+            .camp {
+              width: 100%;
+
+              .label {
+                display: block;
+                margin-bottom: 5px;
+                font-weight: bold;
+                text-align: left;
+              }
+
+              .input {
+                border: 2px solid var(--cinza-claro2);
+                background-color: var(--cinza-claro);
+                color: var(--preto);
+                border-radius: 7px;
+                height: 28px;
+                width: 90%;
+                padding: 6px;
+                outline: none;
+              }
+            }
+          }
+
+          .submit {
+            display: flex;
+            justify-content: flex-end;
+            width: 60%;
+            margin: 15px;
+
+            p {
+              font-size: 13px;
+            }
+
+            .salvar,
+            .proximo,
+            .entrar {
+              border-radius: 5px;
+              border: none;
+              cursor: pointer;
+              height: 30px;
+              font-size: 15px;
+              font-weight: bold;
+              padding: 0px;
+              width: 70px;
+              background-color: var(--laranja);
+
+              &:hover {
+                background-color: var(--laranja-escuro);
+              }
+            }
+
+            .excluir {
+              background-color: transparent;
+              color: var(--vermelho);
+              outline: none;
+              border: none;
+              width: 30px;
+              height: 30px;
+              border-radius: 5px;
+              font-size: 17px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              margin-right: 5px;
+
+              .icone {
+                margin: 0;
+              }
+
+              &:hover {
+                background-color: var(--vermelho);
+                color: var(--branco);
+              }
+            }
+          }
+
+          .submitAuth {
+            display: flex;
+            justify-content: space-between;
+            width: 60%;
+            align-items: center;
+            margin: 15px;
+
+            .link {
+              text-decoration: none;
+              color: var(--preto);
+              font-weight: bold;
+
+              &:hover {
+                color: var(--laranja);
+              }
+            }
+
+            .salvar,
+            .proximo,
+            .entrar {
+              border-radius: 5px;
+              border: none;
+              cursor: pointer;
+              height: 30px;
+              font-size: 15px;
+              font-weight: bold;
+              padding: 0px;
+              width: 70px;
+              background-color: var(--laranja);
+
+              &:hover {
+                background-color: var(--laranja-escuro);
+              }
+            }
+
+            .voltar {
+              border-radius: 5px;
+              border: none;
+              cursor: pointer;
+              font-size: 15px;
+              font-weight: bold;
+              padding: 5px;
+              background-color: var(--cinza-claro);
+              color: var(--preto);
+              border: 2px solid var(--cinza-claro2);
+              margin-right: 10px;
+
+              &:hover {
+                background-color: var(--cinza-escuro);
+              }
+            }
+
+            .sair {
+              border-radius: 5px;
+              border: none;
+              cursor: pointer;
+              font-size: 15px;
+              font-weight: bold;
+              padding: 5px;
+              background-color: var(--vermelho);
+              border: 1px solid var(--vermelho);
+              color: var(--branco);
+              margin-right: 10px;
+
+              &:hover {
+                background-color: var(--cinza-claro2);
+                color: var(--vermelho);
+                border: 2px solid var(--vermelho);
+              }
+            }
+          }
+        }
+
+        .mensagemFalha {
+          padding: 5px;
+          background-color: var(--vermelho);
+          color: var(--branco);
+          border-radius: 3px;
+        }
+
+        .mensagemSucesso {
+          padding: 5px;
+          background-color: var(--verde);
+          color: var(--branco);
+          border-radius: 3px;
+        }
+      }
+
+      .usuario {
+        .infoUsuario {
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+          align-items: flex-start;
+
+          .titulo {
+            margin: 30px 0px 0px 0px;
+            font-size: 35px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+  
+            .icone {
+              font-size: 20px;
+              margin-left: 10px;
+              color: var(--laranja);
+              cursor: pointer;
+            }
+          }
+
+          .input {
+            border: 2px solid var(--cinza-claro2);
+            border-radius: 7px;
+            height: 28px;
+            width: 100%;
+            padding: 6px;
+            outline: none;
+            background-color: var(--cinza-claro);
+            color: var(--preto);
+          }
+  
+          .email {
+            float: inline-start;
+          }
+        }
+      }
+
+      .home {
+        .fileira {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          .titulo {
+            font-size: 35px;
+            text-align: start;
+          }
+
+          .input {
+            border: 2px solid var(--cinza-claro2);
+            background-color: var(--cinza-claro);
+            color: var(--preto);
+            border-radius: 7px;
+            height: 25px;
+            width: 30%;
+            padding: 6px;
+            outline: none;
+          }
+        }
+
+        .viagens {
+          margin-top: 5%;
+          display: grid;
+          grid-template-columns: repeat(5, 1fr);
+          gap: 30px;
+          justify-items: center;
+          
+          .teste {
+            width: 100%;
+            height: 20vh;
+          }
+
+          .infoViagem {
+            width: 80%;
+            height: 28vh;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            margin-right: 40px;
+
+            .adicionarViagem,
+            .viagemCadastrada {
+              border-radius: 7px;
+              padding: 2%;
+              width: 95%;
+              height: 100%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+
+              .icone {
+                margin: 0px;
+                font-size: 40px;
+                color: var(--laranja);
+
+                &:hover {
+                  color: var(--laranja-escuro);
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .planoViagem {
+        text-align: start;
+
+        h1 {
+          margin-bottom: 0;
+
+          button {
+            background-color: transparent;
+            border: none;
+            padding: 0;
+            outline: none;
+            margin: 5px 0px 0px 5px;
+
+            .icone {
+              color: var(--laranja);
+              width: 30%;
+
+              &:hover {
+                color: var(--laranja-escuro);
+              }
+            }
+          }
+        }
+
+        .icone {
+          margin-right: 10px;
+        }
+
+        .telasInfo {
+          display: flex;
+          justify-content: space-between;
+          margin: 3% 0 4% 0;
+          width: 80%;
+
+          .opcao {
+            border: 2px solid var(--cinza-claro2);
+            background-color: var(--cinza-claro);
+            padding: 0.8%;
+            color: var(--preto);
+            border-radius: 0px;
+            outline: none;
+            cursor: pointer;
+            
+            &:hover {
+              background-color: var(--laranja);
+              color: var(--branco);
+              border: none;
+            }
+          }
+
+          .opcao.ativo {
+            background-color: var(--laranja);
+            color: var(--branco);
+            border: none;
+          }
+        }
+
+        .agenda {
+          display: flex;
+          justify-content: space-between;
+          border-bottom: 1px solid var(--cinza-claro);
+
+          .dia {
+            background-color: transparent;
+            color: var(--preto);
+            outline: none;
+            border-radius: 0px;
+
+            &:hover {
+              background-color: var(--laranja);
+              color: var(--branco);
+              border: none;
+            }
+          }
+
+          .dia.ativo {
+            background-color: var(--laranja);
+            color: var(--branco);
+            border: none;
+          }
+        }
+
+        .paginacao {
+          display: flex;
+          justify-content: flex-end;
+          align-items: center;
+          margin-top: 10px;
+
+          .botao {
+            background-color: transparent;
+            border: none;
+            color: var(--preto);
+            outline: none;
+
+            &:hover {
+              color: var(--laranja);
+            }
+          }
+        }
+
+        .listagens {
+          margin-top: 2%;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          width: 80%;
+          border-bottom: 1px solid var(--cinza-claro);
+
+          p {
+            margin: 2px;
+          }
+
+          h3 {
+            margin: 5px 0px;
+          }
+
+          .mapa {
+            border: 2px solid var(--preto);
+            width: 25%;
+            height: 150px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+
+          .icone {
+            font-size: 25px;
+
+            button {
+              background-color: transparent;
+              color: var(--preto);
+              outline: none;
+              border: none;
+
+              .icone {
+                &:hover {
+                  color: var(--laranja);
+                }
+              }
+            }
+          }
+        }
+
+        .modal-overlay {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(0, 0, 0, 0.5);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          z-index: 9999;
+
+          .modal {
+            width: 40%;
+            background-color: var(--branco);
+            border-radius: 7px;
+
+            .card {
+              .campos, .camposHora {
+                width: 100%;
+              }
+
+              .submit {
+                width: 100%;
+              }
+
+              .modal-overlay {
+                .modal {
+                  width: 30%;
+                  font-size: 13px;
+                  padding: 10px;
+
+                  .botoes {
+                    display: flex;
+                    justify-content: flex-end;
+
+                    button {
+                      margin: 10px;
+                    }
+
+                    .confirmar {
+                      background-color: var(--vermelho);
+                      border: none;
+
+                      &:hover {
+                        background-color: var(--cinza-claro2);
+                        color: var(--vermelho);
+                        border: 2px solid var(--vermelho);
+                        font-weight: bold;
+                      }
+                    }
+
+                    .cancelar {
+                      background-color: var(--cinza-escuro);
+                      border: none;
+
+                      &:hover {
+                        background-color: var(--cinza-claro2);
+                        color: var(--preto);
+                        border: 2px solid var(--preto);
+                        font-weight: bold;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        .botao {
+          display: flex;
+          justify-content: flex-end;
+
+          .adicionar {
+            background-color: var(--laranja);
+            border-radius: 100px;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            bottom: 50px;
+
+            .link {
+              .icone {
+                color: var(--branco);
+                font-size: 25px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 0px;
+              }
+            }
+
+            &:hover {
+              background-color: var(--laranja-escuro);
+            }
+          }
+        }
+
+        .mensagemFalha {
+          padding: 5px;
+          background-color: var(--vermelho);
+          color: var(--branco);
+          border-radius: 3px;
+          text-align: center;
+          width: 30%;
+        }
+
+        .mensagemSucesso {
+          padding: 5px;
+          background-color: var(--verde);
+          color: var(--branco);
+          border-radius: 3px;
+          text-align: center;
+          width: 30%;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  html {
+    body {
+      #root {
+        .header {
+          .titulo {
+            width: 35%;
+          }
+        }
+
+        .home {
+          .viagens {
+            grid-template-columns: repeat(3, 1fr);
+          }
+        }
+
+        .planoViagem {
+          .modal-overlay {
+            .modal {
+              width: 60%;
+            }
+          }
+        }
+        
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  html {
+    body {
+      #root {
+        .header {
+          .titulo {
+            width: 45%;
+          }
+        }
+
+        .card, .cardUser {
+          .titulo {
+            font-size: 30px;
+          }
+
+          .form {
+            width: 100%;
+          }
+        }
+
+        .home {
+          .fileira {
+            .titulo {
+              font-size: 25px;
+            }
+          }
+        }
+
+        .planoViagem {
+          .titulo {
+            font-size: 30px;
+          }
+
+          .telasInfo {
+            width: 100%;
+          }
+
+          .listagens {
+            width: 100%;
+
+            .mapa {
+              width: 40%;
+              height: 160px;
+            }
+          }
+
+          .modal-overlay {
+            .modal {
+              width: 60%;
+
+              .card {
+                .form {
+                  width: 70%;
+                }
+
+                .modal-overlay {
+                  .modal {
+                    width: 50%;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 655px) {
+  html {
+    body {
+      #root {
+        .header {
+          .titulo {
+           .logo {
+              width: 25%;
+           }
+
+           h1 {
+            font-size: 25px;
+           }
+          }
+        }
+
+        .card, .cardUser {
+          .form {
+            margin: 20px 0px;
+          }
+
+          .submitAuth {
+            p {
+              font-size: 13px;
+            }
+
+            .botoes {
+              .voltar {
+                padding: 2px;
+              }
+
+              .salvar {
+                height: 25px;
+                width: 50px;
+              }
+            }
+          }
+        }
+
+        .usuario {
+          .infoUsuario {
+            .titulo {
+              font-size: 25px;
+            }
+          }
+        }
+
+        .home {
+          .viagens {
+            grid-template-columns: repeat(2, 1fr);
+
+            .infoViagem {
+              width: 65%;
+            }
+          }
+        }
+
+        .planoViagem {
+          .paginacao {
+            margin-bottom: 20px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 550px) {
+  html {
+    body {
+      #root {
+        .header {
+          .titulo {
+           .logo {
+              width: 30%;
+           }
+
+           h1 {
+            font-size: 23px;
+           }
+          }
+        }
+
+        .card, .cardUser {
+          .form {
+            .campos, .camposHora {
+              width: 90%;
+            }
+
+            .submit, .submitAuth {
+              width: 90%;
+            }
+
+            .submitAuth {
+              justify-content: flex-end;
+              flex-direction: column;
+              align-items: flex-end;
+
+              p {
+                font-size: 15px;
+              }
+
+              .botoes {
+                .voltar {
+                  padding: 5px;
+                }
+  
+                .salvar {
+                  height: 30px;
+                  width: 70px;
+                }
+              }
+            }
+          }
+        }
+
+        .home {
+          .fileira {
+            margin-bottom: 10%;
+
+            flex-direction: column;
+
+            .input {
+              width: 80%;
+            }
+          }
+
+          .viagens {
+            grid-template-columns: repeat(1, 1fr);
+            gap: 0px;
+
+            .infoViagem {
+              width: 40%;
+              height: 35vh;
+              margin: 0px;
+            }
+          }
+        }
+
+        .planoViagem {
+          .listagens {
+            font-size: 13px;
+            
+            .mapa {
+              height: 90px;
+              width: 30%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    body {
+      #root {
+        .header {
+          .titulo {
+            width: 45%;
+
+            h1 {
+              font-size: 18px;
+            }
+          }
+        }
+
+        .usuario {
+          .infoUsuario {
+            .titulo {
+              font-size: 20px;
+            }
+          }
+        }
+
+        .planoViagem {
+          .telasInfo {
+            display: grid;
+            width: 100%;
+            grid-template-columns: repeat(2, 1fr);
+
+            .opcao {
+              margin: 10px;
+            }
+          }
+
+          h2 {
+            font-size: 20px;
+          }
+
+          .listagens {
+            .mapa {
+              width: 40%;
+              margin: 0px;
+            }
+          }
+
+          .modal-overlay {
+            .modal {
+              width: 90%;
+
+              .card {
+                .form {
+                  width: 90%;
+                }
+
+                .modal-overlay {
+                  .modal {
+                    width: 80%;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 380px) {
+  html {
+    body {
+      #root {
+        padding: 1rem;
+
+        .card, .cardUser {
+          .titulo {
+            font-size: 25px;
+          }
+
+          .form {
+            .campos, .submit {
+              margin: 15px 0px;
+            }
+          }
+        }
+
+        .usuario {
+          .infoUsuario {
+            .titulo {
+              font-size: 17px;
+
+              .icon {
+                font-size: 15px;
+              }
+            }
+
+            .email {
+              font-size: 13px;
+            }
+          }
+        }
+
+        .home {
+          .viagens {
+            .infoViagem {
+              width: 70%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 355px) {
+  html {
+    body {
+      #root {
+        .header {
+          .titulo {
+            width: 50%;
+          }
+        }
+
+        .card, .cardUser {
+          .submitAuth {
+            p {
+              font-size: 12px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
