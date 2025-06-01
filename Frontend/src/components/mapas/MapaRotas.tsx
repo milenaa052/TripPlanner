@@ -2,8 +2,8 @@ import { useEffect, useState } from "react"
 import { MapContainer, TileLayer, Polyline } from "react-leaflet"
 import "leaflet/dist/leaflet.css"
 
-const GEONAMES_USERNAME = "milenaa052"
-const API_KEY = "356a4553-eb5c-43e1-bff1-f878b4fd8f10"
+const GEONAMES_USERNAME = import.meta.env.VITE_GEONAMES_USERNAME as string
+const API_KEY = import.meta.env.VITE_API_KEY as string
 
 const RotasMapa: React.FC<{ origem: string; destino: string }> = ({ origem, destino }) => {
   const [coordenadasRota, setCoordenadasRota] = useState<[number, number][]>([])

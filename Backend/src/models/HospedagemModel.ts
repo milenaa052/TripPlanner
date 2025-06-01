@@ -1,6 +1,5 @@
 import { DataTypes, Model } from "sequelize"
 import sequelize from "../config/database"
-import ViagemModel from "./ViagemModel"
 import DespesaModel from "./DespesaModel"
 
 class HospedagemModel extends Model {

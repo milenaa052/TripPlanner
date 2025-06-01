@@ -4,7 +4,7 @@ interface GeoNamesResposta {
   name: string
 }
 
-const GEONAMES_USERNAME = "milenaa052"
+const GEONAMES_USERNAME = import.meta.env.VITE_GEONAMES_USERNAME as string
 
 interface InputLocalProps {
   local: string
