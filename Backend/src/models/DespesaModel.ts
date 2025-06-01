@@ -1,9 +1,5 @@
 import { DataTypes, Model } from "sequelize"
 import sequelize from "../config/database"
-import ViagemModel from "./ViagemModel"
-import HospedagemModel from "./HospedagemModel"
-import TransporteModel from "./TransporteModel"
-import PasseioModel from "./PasseioModel"
 
 class DespesaModel extends Model {
     idDespesa: number | undefined

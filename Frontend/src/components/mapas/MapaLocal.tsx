@@ -3,7 +3,7 @@ import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet"
 import Leaflet from "leaflet"
 import "leaflet/dist/leaflet.css"
 
-const GEONAMES_USERNAME = "milenaa052"
+const GEONAMES_USERNAME = import.meta.env.VITE_GEONAMES_USERNAME as string
 
 const marcadorIcone = new Leaflet.Icon({
   iconUrl: "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png",
