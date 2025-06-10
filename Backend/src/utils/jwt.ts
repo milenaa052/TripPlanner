@@ -1,7 +1,10 @@
 import jwt from "jsonwebtoken"
 import UsuarioModel from "../models/UsuarioModel"
+import dotenv from 'dotenv'
 
-const JWT_SECRETA = process.env.JWT_SECRETA || "chave"
+dotenv.config()
+
+const JWT_SECRETA = process.env.JWT_SECRETA as string
 const JWT_EXPIRA_EM = "7d"
 
 export const gerarToken = (usuario: UsuarioModel): string => {
