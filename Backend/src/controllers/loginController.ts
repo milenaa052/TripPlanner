@@ -2,6 +2,9 @@ import { Request, Response, NextFunction } from "express"
 import jwt from "jsonwebtoken"
 import { gerarToken } from "../utils/jwt"
 import UsuarioModel from "../models/UsuarioModel"
+import dotenv from 'dotenv'
+
+dotenv.config()
 
 export const loginUsuario = async (req: Request, res: Response) => {
     const { email, senha } = req.body
@@ -61,7 +64,7 @@ export const usuarioLogado = (req: Request, res: Response) => {
     const token = authHeader.split(" ")[1]
 
     try {
-        const segredo = process.env.JWT_SECRET || "chave"
+        const segredo = process.env.JWT_SECRETA as string
 
         const decoded = jwt.verify(token, segredo)
 
