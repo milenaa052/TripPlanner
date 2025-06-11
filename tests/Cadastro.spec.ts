@@ -19,6 +19,16 @@ test.describe('Autenticação', () => {
         await expect(page.locator('text=Login')).toBeVisible()
     })
 
+    test('Deve mostrar nome ou CPF não preenchido', async ({ page }) => {
+        await page.goto('http://localhost:5173/cadastro-usuario')
+        await page.fill('input#nome', '')
+        await page.fill('input#cpf', '693.187.600-78')
+        await page.click('button[type="submit"]')
+
+        await expect(page.locator('text=Nome ou CPF não preenchido')).toBeVisible()
+        await expect(page).toHaveURL('http://localhost:5173/cadastro-usuario')
+    })
+
     test('Deve mostrar todos os campos são obrigatórios', async ({ page }) => {
         await page.goto('http://localhost:5173/cadastro-usuario')
         await page.fill('input#nome', 'Usuário Teste Playwright')
