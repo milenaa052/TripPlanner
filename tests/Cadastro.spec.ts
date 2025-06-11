@@ -29,6 +29,16 @@ test.describe('Autenticação', () => {
         await expect(page).toHaveURL('http://localhost:5173/cadastro-usuario')
     })
 
+    test('Deve mostrar CPF inválido ou não existe', async ({ page }) => {
+        await page.goto('http://localhost:5173/cadastro-usuario')
+        await page.fill('input#nome', 'Teste Usuário Playwright')
+        await page.fill('input#cpf', '123.456.789-00')
+        await page.click('button[type="submit"]')
+
+        await expect(page.locator('text=CPF inválido ou não existe')).toBeVisible()
+        await expect(page).toHaveURL('http://localhost:5173/cadastro-usuario')
+    })
+
     test('Deve mostrar todos os campos são obrigatórios', async ({ page }) => {
         await page.goto('http://localhost:5173/cadastro-usuario')
         await page.fill('input#nome', 'Usuário Teste Playwright')
