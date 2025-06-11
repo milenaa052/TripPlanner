@@ -89,4 +89,21 @@ test.describe('Autenticação', () => {
         await expect(page).toHaveURL('http://localhost:5173/cadastro-usuario-auth')
         await expect(page.locator('text=Senha muito fraca')).toBeVisible()
     })
+
+    test('Deve mostrar as senhas não coincidem.', async ({ page }) => {
+        await page.goto('http://localhost:5173/cadastro-usuario')
+        await page.fill('input#nome', 'Usuário Teste Playwright')
+        await page.fill('input#cpf', '693.187.600-78')
+        await page.click('button[type="submit"]')
+
+        await expect(page).toHaveURL('http://localhost:5173/cadastro-usuario-auth')
+
+        await page.fill('input#email', 'teste@gmail.com')
+        await page.fill('input#senha', '412Teste##')
+        await page.fill('input#confirmaSenha', '412Teste#')
+        await page.click('button[type="submit"]')
+
+        await expect(page).toHaveURL('http://localhost:5173/cadastro-usuario-auth')
+        await expect(page.locator('text=As senhas não coincidem.')).toBeVisible()
+    })
 })
