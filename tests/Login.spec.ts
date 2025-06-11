@@ -11,4 +11,14 @@ test.describe('Autenticação', () => {
         await expect(page).toHaveURL('http://localhost:5173')
         await expect(page.locator('text=Adicione o seu destino')).toBeVisible()
     })
+
+    test('Deve mostrar uma mensagem de erro para credenciais de login inválidas', async ({ page }) => {
+        await page.goto('http://localhost:5173/login')
+        await page.fill('input#email', 'invalido@example.com')
+        await page.fill('input#senha', 'senha_incorreta')
+        await page.click('button[type="submit"]')
+
+        await expect(page.locator('text=Email ou senha inválidos')).toBeVisible()
+        await expect(page).toHaveURL('http://localhost:5173/login')
+    })
 })
