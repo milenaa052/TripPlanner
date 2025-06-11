@@ -55,4 +55,21 @@ test.describe('Autenticação', () => {
         await expect(page).toHaveURL('http://localhost:5173/cadastro-usuario-auth')
         await expect(page.locator('text=Todos os campos são obrigatórios')).toBeVisible()
     })
+
+    test('Deve mostrar formato de e-mail inválido.', async ({ page }) => {
+        await page.goto('http://localhost:5173/cadastro-usuario')
+        await page.fill('input#nome', 'Usuário Teste Playwright')
+        await page.fill('input#cpf', '693.187.600-78')
+        await page.click('button[type="submit"]')
+
+        await expect(page).toHaveURL('http://localhost:5173/cadastro-usuario-auth')
+
+        await page.fill('input#email', 'teste@email')
+        await page.fill('input#senha', '412Teste#')
+        await page.fill('input#confirmaSenha', '412Teste#')
+        await page.click('button[type="submit"]')
+
+        await expect(page).toHaveURL('http://localhost:5173/cadastro-usuario-auth')
+        await expect(page.locator('text=Formato de e-mail inválido')).toBeVisible()
+    })
 })
