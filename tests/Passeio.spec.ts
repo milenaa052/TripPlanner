@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test'
 
-test.describe('Teste de Cadastro Crud Passeio', () => {
+test.describe('Teste do Crud de Passeio', () => {
 
     test.beforeEach(async ({ page }) => {
         await page.goto('http://localhost:5173/login')
@@ -13,7 +13,7 @@ test.describe('Teste de Cadastro Crud Passeio', () => {
         await page.locator('.viagemCadastrada').first().click()
     })
 
-    test('O usuário irá criar um passeio e listar com sucesso', async ({ page }) => {
+    test('O usuário irá criar, listar, ataulizar e remover um passeio com sucesso', async ({ page }) => {
         
         await page.goto('http://localhost:5173/info-viagem/1')
 
@@ -49,6 +49,7 @@ test.describe('Teste de Cadastro Crud Passeio', () => {
         await primeiroItem.click()
         await page.click('.excluir')
         await page.click('.confirmar')
+        await expect(page.locator('text=Passeio excluído com sucesso!')).toBeVisible()
         await expect(page).toHaveURL('http://localhost:5173/?data=2025-05-02%2000:00:00')
     })
 })
