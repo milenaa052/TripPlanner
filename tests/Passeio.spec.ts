@@ -52,4 +52,23 @@ test.describe('Teste do Crud de Passeio', () => {
         await expect(page.locator('text=Passeio excluído com sucesso!')).toBeVisible()
         await expect(page).toHaveURL('http://localhost:5173/?data=2025-05-02%2000:00:00')
     })
+
+    test('O usuário não irá conseguir cadastrar o passeio', async ({ page }) => {
+        await page.goto('http://localhost:5173/info-viagem/1')
+
+        await page.getByText('Passeios').click()
+        await page.getByText('02/05').click()
+        await page.click('.adicionar')
+
+        await expect(page).toHaveURL('http://localhost:5173/cadastro-passeio/1?data=2025-05-02%2000:00:00')
+        const inputOrigem = page.locator('.input').first()
+        await inputOrigem.fill('Hotel Quirinale')
+        
+        await page.fill('input#horaInicial', '')
+        await page.fill('input#horaFinal', '12:00')
+        await page.fill('input#gasto', '25')
+        await page.click('button[type="submit"]')
+
+        await expect(page.locator('text=Todos os campos são obrigatórios')).toBeVisible()
+    })
 })
