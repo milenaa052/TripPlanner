@@ -32,6 +32,7 @@ test.describe('Teste de Cadastro Crud Passeio', () => {
 
         await expect(page.locator('text=Passeio cadastrado com sucesso!')).toBeVisible()
         await expect(page).toHaveURL('http://localhost:5173/info-viagem/1')
+        
         await page.getByText('Passeios').click()
         await page.getByText('02/05').click()
         await expect(page).toHaveURL('http://localhost:5173/info-viagem/1')
