@@ -71,4 +71,25 @@ test.describe('Teste do Crud de Passeio', () => {
 
         await expect(page.locator('text=Todos os campos são obrigatórios')).toBeVisible()
     })
+
+    test('O usuário não irá conseguir atualizar o passeio', async ({ page }) => {
+        await page.goto('http://localhost:5173/info-viagem/1')
+
+        await page.getByText('Passeios').click()
+        await page.getByText('02/05').click()
+
+        await expect(page).toHaveURL('http://localhost:5173/info-viagem/1')
+        const primeiroItem = page.locator('.listagens .icone').first()
+        await primeiroItem.click()
+        
+        const inputOrigem = page.locator('.input').first()
+        await inputOrigem.fill('Hotel Quirinale')
+        
+        await page.fill('input#horaInicial', '10:00')
+        await page.fill('input#horaFinal', '')
+        await page.fill('input#gasto', '25')
+        await page.click('button[type="submit"]')
+
+        await expect(page.locator('text=Todos os campos são obrigatórios')).toBeVisible()
+    })
 })
