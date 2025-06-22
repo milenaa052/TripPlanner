@@ -59,7 +59,7 @@ function ModalTransporte({ transporte, onDelete, onClose, onUpdate }: ModalTrans
                 viagemId: Number(id)
             }
 
-            await axios.put(`http://localhost:3000/transporte/${transporte.idTransporte}`, dados, {
+            await axios.put(`https://tripplanner.local/transporte/${transporte.idTransporte}`, dados, {
                 headers: {
                     'Authorization': `Bearer ${localStorage.getItem('authToken')}`
                 }

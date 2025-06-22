@@ -63,7 +63,7 @@ function ModalViagem({ viagem, onDelete, onClose, onUpdate }: ModalViagemProps) 
                 dataFinal: dataFim.toISOString().split("T")[0],
             }
 
-            await axios.put(`http://localhost:3000/viagem/${viagem.idViagem}`, dados, {
+            await axios.put(`https://tripplanner.local/viagem/${viagem.idViagem}`, dados, {
                 headers: {
                     'Authorization': `Bearer ${localStorage.getItem('authToken')}`
                 }
