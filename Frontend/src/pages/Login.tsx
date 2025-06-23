@@ -37,7 +37,7 @@ function Login () {
             setMensagemSucesso("Login realizado com sucesso!")
 
             setTimeout(() => {
-                navigate("/")
+                navigate("https://tripplanner.local/")
             }, 1500)
 
             setEmail("")

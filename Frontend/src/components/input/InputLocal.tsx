@@ -22,7 +22,7 @@ const InputLocal: React.FC<InputLocalProps> = ({  local, setLocal, className }) 
     }
 
     try {
-      const response = await fetch(`http://api.geonames.org/searchJSON?q=${input}&maxRows=5&username=${GEONAMES_USERNAME}`)
+      const response = await fetch(`/geonames-api/searchJSON?q=${input}&maxRows=5&username=${GEONAMES_USERNAME}`)
       
       const data = await response.json()
 

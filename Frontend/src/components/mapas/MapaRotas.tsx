@@ -22,10 +22,10 @@ const RotasMapa: React.FC<{ origem: string; destino: string }> = ({ origem, dest
       setErro("")
 
       try {
-        const responseOrigem = await fetch(`http://api.geonames.org/searchJSON?q=${origem}&maxRows=1&username=${GEONAMES_USERNAME}`)
+        const responseOrigem = await fetch(`/geonames-api/searchJSON?q=${origem}&maxRows=1&username=${GEONAMES_USERNAME}`)
         const dataOrigem = await responseOrigem.json()
 
-        const responseDestino = await fetch(`http://api.geonames.org/searchJSON?q=${destino}&maxRows=1&username=${GEONAMES_USERNAME}`)
+        const responseDestino = await fetch(`/geonames-api/searchJSON?q=${destino}&maxRows=1&username=${GEONAMES_USERNAME}`)
         const dataDestino = await responseDestino.json()
 
         if (dataOrigem.geonames.length > 0 && dataDestino.geonames.length > 0) {
