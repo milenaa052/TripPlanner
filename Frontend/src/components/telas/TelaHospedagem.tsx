@@ -29,7 +29,7 @@ function TelaHospedagem() {
   }, [])
 
   const carregarHospedagens = () => {
-    axios.get(`https://tripplanner.local/hospedagens/?viagemId=${id}`, {
+    axios.get(`/api/hospedagens/?viagemId=${id}`, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("authToken")}`
       }
@@ -51,7 +51,7 @@ function TelaHospedagem() {
   }
 
   const deletarHospedagem = (idHospedagem: number) => {
-    axios.delete(`https://tripplanner.local/hospedagem/${idHospedagem}`, {
+    axios.delete(`/api/hospedagem/${idHospedagem}`, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("authToken")}`
       }
@@ -105,7 +105,7 @@ function TelaHospedagem() {
 
       <div className="botao">
         <div className="adicionar">
-          <a href={`/cadastro-hospedagem/${id}`} className="link">
+          <a href={`/api/cadastro-hospedagem/${id}`} className="link">
             <FontAwesomeIcon icon={faPlus} className="icone" />
           </a>
         </div>

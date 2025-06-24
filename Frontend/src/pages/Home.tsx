@@ -22,7 +22,7 @@ function Home() {
     }
 
     useEffect(() => {
-        api.get("/viagens", {
+        api.get("/api/viagens", {
             headers: {
                 'Authorization': `Bearer ${localStorage.getItem('authToken')}`
             }

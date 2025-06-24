@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route, Outlet } from "react-router"
+import { BrowserRouter as Router, Routes, Route, Outlet } from "react-router-dom"
 import "./App.css"
 import Header from "./components/Header"
 import CadastroUsuario from "./pages/cadastro/CadastroUsuario"

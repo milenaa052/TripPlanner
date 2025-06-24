@@ -39,7 +39,7 @@ function CadastroHospedagem() {
         viagemId: Number(id),
       }
 
-      await axios.post("https://tripplanner.local/cadastro-hospedagem", dados, {
+      await axios.post("/api/cadastro-hospedagem", dados, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("authToken")}`
         }

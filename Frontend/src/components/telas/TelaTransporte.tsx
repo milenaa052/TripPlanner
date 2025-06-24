@@ -30,7 +30,7 @@ function TelaTransporte() {
   }, [])
 
   const carregarTransportes = () => {
-    axios.get(`https://tripplanner.local/transportes/?viagemId=${id}`, {
+    axios.get(`/api/transportes/?viagemId=${id}`, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("authToken")}`
       }
@@ -52,7 +52,7 @@ function TelaTransporte() {
   }
 
   const deletarTransporte = (idTransporte: number) => {
-    axios.delete(`https://tripplanner.local/transporte/${idTransporte}`, {
+    axios.delete(`/api/transporte/${idTransporte}`, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("authToken")}`
       }
@@ -110,7 +110,7 @@ function TelaTransporte() {
 
       <div className="botao">
         <div className="adicionar">
-          <a href={`/cadastro-transporte/${id}`} className="link">
+          <a href={`/api/cadastro-transporte/${id}`} className="link">
             <FontAwesomeIcon icon={faPlus} className="icone" />
           </a>
         </div>

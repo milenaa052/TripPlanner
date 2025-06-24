@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { useNavigate } from "react-router"
+import { useNavigate } from "react-router-dom"
 import { useAuth } from "../contexts/AuthContext"
 import axios from "axios"
 
@@ -26,7 +26,7 @@ function Login () {
                 return
             }
 
-            const response = await axios.post("https://tripplanner.local/login", {
+            const response = await axios.post("/api/login", {
                 email,
                 senha
             })
@@ -37,7 +37,7 @@ function Login () {
             setMensagemSucesso("Login realizado com sucesso!")
 
             setTimeout(() => {
-                navigate("https://tripplanner.local/")
+                navigate("/")
             }, 1500)
 
             setEmail("")

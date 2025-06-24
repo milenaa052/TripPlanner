@@ -27,7 +27,7 @@ function TelaDespesas() {
   }, [])
 
   const carregarDespesas = () => {
-    axios.get(`https://tripplanner.local/despesas/?viagemId=${id}`, {
+    axios.get(`/api/despesas/?viagemId=${id}`, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("authToken")}`
       }
@@ -49,7 +49,7 @@ function TelaDespesas() {
   }
 
   const deletarDespesa = (idDespesa: number) => {
-    axios.delete(`https://tripplanner.local/despesa/${idDespesa}`, {
+    axios.delete(`/api/despesa/${idDespesa}`, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("authToken")}`
       }
@@ -102,7 +102,7 @@ function TelaDespesas() {
 
       <div className="botao">
         <div className="adicionar">
-          <a href={`/cadastro-despesas/${id}`} className="link">
+          <a href={`/api/cadastro-despesas/${id}`} className="link">
             <FontAwesomeIcon icon={faPlus} className="icone" />
           </a>
         </div>

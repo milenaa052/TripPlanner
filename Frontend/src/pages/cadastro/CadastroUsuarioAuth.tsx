@@ -76,7 +76,7 @@ function CadastroUsuarioAuth () {
         }
 
         try {
-            await axios.post("https://tripplanner.local/cadastro-usuario-auth", {
+            await axios.post("/api/cadastro-usuario", {
                 nome,
                 cpfUsuario,
                 email,

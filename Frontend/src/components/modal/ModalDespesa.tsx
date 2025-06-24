@@ -52,7 +52,7 @@ function ModalDespesa({ despesa, onDelete, onClose, onUpdate }: ModalDespesaProp
         viagemId: Number(id),
       }
 
-      await axios.put(`https://tripplanner.local/despesa/${despesa.idDespesa}`, dados, {
+      await axios.put(`/api/despesa/${despesa.idDespesa}`, dados, {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("authToken")}`
           }

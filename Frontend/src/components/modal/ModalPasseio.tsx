@@ -65,7 +65,7 @@ function ModalPasseio({ passeio, onDelete, onClose, onUpdate }: ModalPasseioProp
                 viagemId: Number(id)
             }
 
-            await axios.put(`https://tripplanner.local/passeio/${passeio.idPasseio}`, dados, {
+            await axios.put(`/api/passeio/${passeio.idPasseio}`, dados, {
                 headers: {
                     'Authorization': `Bearer ${localStorage.getItem('authToken')}`
                 }

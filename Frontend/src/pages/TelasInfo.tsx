@@ -63,7 +63,7 @@ function TelasInfo() {
   }
 
   const deletarViagem = (idViagem: number) => {
-    axios.delete(`https://tripplanner.local/viagem/${idViagem}`, {
+    axios.delete(`/api/viagem/${idViagem}`, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("authToken")}`
       }

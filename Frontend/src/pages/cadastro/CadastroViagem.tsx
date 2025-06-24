@@ -38,7 +38,7 @@ function CadastroViagem() {
         dataFinal: dataFim.toISOString().split("T")[0],
       }
 
-      await axios.post("https://tripplanner.local/cadastro-viagem", dados, {
+      await axios.post("/api/cadastro-viagem", dados, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("authToken")}`
         }

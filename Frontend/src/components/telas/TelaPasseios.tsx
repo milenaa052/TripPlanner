@@ -38,7 +38,7 @@ function TelaPasseios() {
   const { id } = useParams()
 
   useEffect(() => {
-    axios.get(`https://tripplanner.local/viagem/${id}`, {
+    axios.get(`/api/viagem/${id}`, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("authToken")}`
       }
@@ -57,7 +57,7 @@ function TelaPasseios() {
   }, [])
 
   const carregarPasseios = () => {
-    axios.get(`https://tripplanner.local/passeios/?viagemId=${id}`, {
+    axios.get(`/api/passeios/?viagemId=${id}`, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("authToken")}`
       }
@@ -151,7 +151,7 @@ function TelaPasseios() {
   }
 
   const deletarPasseio = (idPasseio: number) => {
-    axios.delete(`https://tripplanner.local/passeio/${idPasseio}`, {
+    axios.delete(`/api/passeio/${idPasseio}`, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("authToken")}`
       }
@@ -244,7 +244,7 @@ function TelaPasseios() {
 
       <div className="botao">
         <div className="adicionar">
-          <a href={`/cadastro-passeio/${id}?data=${converterData(diaSelecionado)}`} className="link">
+          <a href={`/api/cadastro-passeio/${id}?data=${converterData(diaSelecionado)}`} className="link">
             <FontAwesomeIcon icon={faPlus} className="icone" />
           </a>
         </div>
