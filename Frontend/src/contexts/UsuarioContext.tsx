@@ -39,7 +39,7 @@ export const UsuarioProvider = ({ children }: { children: React.ReactNode }) => 
       if (!token) return;
 
       try {
-        const response = await axios.get("https://tripplanner.local/usuario/perfil", {
+        const response = await axios.get("/api/usuario/perfil", {
             headers: {
               Authorization: `Bearer ${token}`
             }
@@ -58,7 +58,7 @@ export const UsuarioProvider = ({ children }: { children: React.ReactNode }) => 
 
   const updateUsuario = async (updateUsuario: UpdateUsuarioPayload) => {
     try {
-      const response = await axios.put(`https://tripplanner.local/usuario/${usuario?.idUsuario}`, updateUsuario,
+      const response = await axios.put(`/api//usuario/${usuario?.idUsuario}`, updateUsuario,
         {
           headers: {
             Authorization: `Bearer ${token}`
