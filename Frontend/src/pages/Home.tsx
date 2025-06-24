@@ -18,7 +18,7 @@ function Home() {
     }
 
     useEffect(() => {
-        axios.get("http://localhost:3000/viagens", {
+        axios.get("/api/viagens", {
             headers: {
                 'Authorization': `Bearer ${localStorage.getItem('authToken')}`
             }

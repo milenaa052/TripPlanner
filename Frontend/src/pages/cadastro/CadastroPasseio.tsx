@@ -41,7 +41,7 @@ function CadastroPasseio() {
         viagemId: Number(id),
       }
 
-      await axios.post("http://localhost:3000/cadastro-passeio", dados, {
+      await axios.post("/api/cadastro-passeio", dados, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("authToken")}`
         }
