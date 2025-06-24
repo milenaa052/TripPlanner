@@ -110,7 +110,7 @@ function TelaTransporte() {
 
       <div className="botao">
         <div className="adicionar">
-          <a href={`/api/cadastro-transporte/${id}`} className="link">
+          <a href={`/cadastro-transporte/${id}`} className="link">
             <FontAwesomeIcon icon={faPlus} className="icone" />
           </a>
         </div>

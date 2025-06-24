@@ -244,7 +244,7 @@ function TelaPasseios() {
 
       <div className="botao">
         <div className="adicionar">
-          <a href={`/api/cadastro-passeio/${id}?data=${converterData(diaSelecionado)}`} className="link">
+          <a href={`/cadastro-passeio/${id}?data=${converterData(diaSelecionado)}`} className="link">
             <FontAwesomeIcon icon={faPlus} className="icone" />
           </a>
         </div>

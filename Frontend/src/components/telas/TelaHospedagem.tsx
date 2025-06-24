@@ -105,7 +105,7 @@ function TelaHospedagem() {
 
       <div className="botao">
         <div className="adicionar">
-          <a href={`/api/cadastro-hospedagem/${id}`} className="link">
+          <a href={`/cadastro-hospedagem/${id}`} className="link">
             <FontAwesomeIcon icon={faPlus} className="icone" />
           </a>
         </div>

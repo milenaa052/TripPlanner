@@ -36,7 +36,7 @@ function TelasInfo() {
   }, [])
 
   const carregarViagem = () => {{
-    axios.get(`https://tripplanner.local/viagem/${id}`, {
+    axios.get(`/api/viagem/${id}`, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("authToken")}`
       }

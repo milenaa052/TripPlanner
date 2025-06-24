@@ -3,10 +3,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faPlus } from "@fortawesome/free-solid-svg-icons"
 import axios from "axios"
 
-const api = axios.create({
-    baseURL: import.meta.env.VITE_API_URL || '/api/',
-});
-
 function Home() {
     const [viagem, setViagem] = useState<Viagem[]>([])
     const [busca, setBusca] = useState("")
@@ -22,16 +18,13 @@ function Home() {
     }
 
     useEffect(() => {
-        api.get("/api/viagens", {
+        axios.get("/api/viagens", {
             headers: {
                 'Authorization': `Bearer ${localStorage.getItem('authToken')}`
             }
         })
         .then((response) => {
             setViagem(response.data)
-            console.log("Tipo de response.data:", typeof response.data);
-            console.log("Conteúdo de response.data:", response.data);
-            console.log("É um array?", Array.isArray(response.data));
         })
         .catch((error) => {
             console.error("Erro ao buscar viagens", error)

@@ -102,7 +102,7 @@ function TelaDespesas() {
 
       <div className="botao">
         <div className="adicionar">
-          <a href={`/api/cadastro-despesas/${id}`} className="link">
+          <a href={`/cadastro-despesas/${id}`} className="link">
             <FontAwesomeIcon icon={faPlus} className="icone" />
           </a>
         </div>
