@@ -38,7 +38,7 @@ function TelaPasseios() {
   const { id } = useParams()
 
   useEffect(() => {
-    axios.get(`http://localhost:3000/viagem/${id}`, {
+    axios.get(`/api/viagem/${id}`, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("authToken")}`
       }
@@ -57,7 +57,7 @@ function TelaPasseios() {
   }, [])
 
   const carregarPasseios = () => {
-    axios.get(`http://localhost:3000/passeios/?viagemId=${id}`, {
+    axios.get(`/api/passeios/?viagemId=${id}`, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("authToken")}`
       }
@@ -151,7 +151,7 @@ function TelaPasseios() {
   }
 
   const deletarPasseio = (idPasseio: number) => {
-    axios.delete(`http://localhost:3000/passeio/${idPasseio}`, {
+    axios.delete(`/api/passeio/${idPasseio}`, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("authToken")}`
       }

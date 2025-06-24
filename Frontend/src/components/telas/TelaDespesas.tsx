@@ -27,7 +27,7 @@ function TelaDespesas() {
   }, [])
 
   const carregarDespesas = () => {
-    axios.get(`http://localhost:3000/despesas/?viagemId=${id}`, {
+    axios.get(`/api/despesas/?viagemId=${id}`, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("authToken")}`
       }
@@ -49,7 +49,7 @@ function TelaDespesas() {
   }
 
   const deletarDespesa = (idDespesa: number) => {
-    axios.delete(`http://localhost:3000/despesa/${idDespesa}`, {
+    axios.delete(`/api/despesa/${idDespesa}`, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("authToken")}`
       }

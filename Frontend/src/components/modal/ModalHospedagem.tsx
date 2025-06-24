@@ -63,7 +63,7 @@ function ModalHospedagem({ hospedagem, onDelete, onClose, onUpdate }: ModalHospe
                 viagemId: Number(id)
             }
 
-            await axios.put(`http://localhost:3000/hospedagem/${hospedagem.idHospedagem}`, dados, {
+            await axios.put(`/api/hospedagem/${hospedagem.idHospedagem}`, dados, {
                 headers: {
                     'Authorization': `Bearer ${localStorage.getItem('authToken')}`
                 }

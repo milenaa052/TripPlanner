@@ -24,7 +24,7 @@ const InputDestino: React.FC<InputDestinoProps> = ({  localDestino, setLocalDest
     }
 
     try {
-      const response = await fetch(`http://api.geonames.org/searchJSON?q=${input}&maxRows=5&username=${GEONAMES_USERNAME}`)
+      const response = await fetch(`/geonames-api/searchJSON?q=${input}&maxRows=5&username=${GEONAMES_USERNAME}`)
       
       const data = await response.json()
 

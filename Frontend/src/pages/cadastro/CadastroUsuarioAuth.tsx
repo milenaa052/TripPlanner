@@ -76,7 +76,7 @@ function CadastroUsuarioAuth () {
         }
 
         try {
-            await axios.post("http://localhost:3000/cadastro-usuario", {
+            await axios.post("/api/cadastro-usuario", {
                 nome,
                 cpfUsuario,
                 email,

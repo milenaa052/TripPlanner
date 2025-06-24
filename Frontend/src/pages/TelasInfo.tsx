@@ -36,7 +36,7 @@ function TelasInfo() {
   }, [])
 
   const carregarViagem = () => {{
-    axios.get(`http://localhost:3000/viagem/${id}`, {
+    axios.get(`/api/viagem/${id}`, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("authToken")}`
       }
@@ -63,7 +63,7 @@ function TelasInfo() {
   }
 
   const deletarViagem = (idViagem: number) => {
-    axios.delete(`http://localhost:3000/viagem/${idViagem}`, {
+    axios.delete(`/api/viagem/${idViagem}`, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("authToken")}`
       }

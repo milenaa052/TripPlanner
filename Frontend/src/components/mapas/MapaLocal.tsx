@@ -25,7 +25,7 @@ const MapaComponente: React.FC<{ local: string }> = ({ local }) => {
 
     const buscarLocalizacao = async () => {
       try {
-        const response = await fetch(`http://api.geonames.org/searchJSON?q=${local}&maxRows=1&username=${GEONAMES_USERNAME}`)
+        const response = await fetch(`/geonames-api/searchJSON?q=${local}&maxRows=1&username=${GEONAMES_USERNAME}`)
 
         const data = await response.json()
 
