@@ -39,8 +39,11 @@ function ModalPasseio({ passeio, onDelete, onClose, onUpdate }: ModalPasseioProp
     const { id } = useParams()
 
     const formatarHora = (hora: string) => {
-        return `${hora}:00`
-    }
+        if (hora.length <= 5) {
+            return `${hora}:00`;
+        }
+        return hora;
+    };
 
     const atualizarPasseio = async (e: React.FormEvent) => {
         e.preventDefault()
