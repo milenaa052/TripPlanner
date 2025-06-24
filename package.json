@@ -1,16 +1,16 @@
 {
   "dependencies": {
-    "husky": "^9.1.7",
     "save-dev": "^0.0.1-security"
   },
   "scripts": {
-    "prepare": "husky",
+    "prepare": "husky install",
     "E2E": "playwright test --project=chromium"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.8.1",
     "@commitlint/config-conventional": "^19.8.1",
     "@playwright/test": "^1.53.0",
-    "@types/node": "^24.0.0"
+    "@types/node": "^24.0.0",
+    "husky": "^9.1.7"
   }
 }
