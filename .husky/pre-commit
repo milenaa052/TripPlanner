@@ -1,0 +1,3 @@
+cd Backend && npm run test
+cd ..
+npm run E2E
