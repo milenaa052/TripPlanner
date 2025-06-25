@@ -1,4 +1,8 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-cd Backend && npm run test && cd .. && npm run E2E
+cd Backend && npm run test
+
+cd ..
+
+npm run E2E
